@@ -6,22 +6,26 @@
 Console.Write("Введите целое трехзначное число: ");
 int user_number = Convert.ToInt32(Console.ReadLine());
 
-int third_number(int user_number)
+void third_number(int user_number)
 {
-    int result = user_number % 10;
     if (user_number < 100)
     {
         Console.WriteLine("Третьей цифры нет");
     }
-    else if (user_number > 999)
+
+    else if (user_number > 99)
     {
-        Console.WriteLine("Третья цифра числа " + user_number + " = " + user_number.ToString()[2]);
+        while (user_number > 999)
+        {
+            user_number = user_number / 10;
+        }
+            Console.Write("Третья цифра числа = " + user_number % 10);
     }
+
     else
-    {
-        Console.WriteLine("Третья цифра числа " + user_number + " = " + result);
-    }
-    return result;
+{
+    Console.WriteLine("Третья цифра числа " + user_number + " = " + user_number % 10);
+}
 }
 
-int res = third_number(user_number);
+third_number(user_number);
