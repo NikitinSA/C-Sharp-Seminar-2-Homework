@@ -6,69 +6,46 @@
 Console.Write("Введите число, обозначающее день недели: ");
 int day_number = Convert.ToInt32(Console.ReadLine());
 
-int digit_day_number(int day_number) //показывает день недели  равный введенному числу
+void day_off_of_the_week(int day_number)
 {
-    int result = day_number;
-
     if (day_number == 1)
     {
-        Console.Write("Понедельник");
+        Console.Write("Понедельник - будний день :(");
     }
 
     else if (day_number == 2)
     {
-        Console.Write("Вторник");
+        Console.Write("Вторник - будний день :(");
     }
 
     else if (day_number == 3)
     {
-        Console.Write("Среда");
+        Console.Write("Среда - будний день :(");
     }
 
     else if (day_number == 4)
     {
-        Console.Write("Четверг");
+        Console.Write("Четверг - будний день :(");
     }
 
     else if (day_number == 5)
     {
-        Console.Write("Пятница");
+        Console.Write("Пятница - будний день :(");
     }
 
     else if (day_number == 6)
     {
-        Console.Write("Суббота");
+        Console.Write("Суббота - выходной день :)");
     }
 
     else if (day_number == 7)
     {
-        Console.Write("Воскресенье");
+        Console.Write("Воскресенье - выходной день :)");
     }
     else if (day_number < 1 || day_number > 7)
     {
         Console.Write("Ошибка! Нет такого числа дня недели.");
     }
-    
-    return result;
 }
 
-int day_off_of_the_week(int day_number) //показывает выходной день или будний
-{
-    int result = day_number;
-    if (day_number == 6 || day_number == 7)
-    {
-        Console.WriteLine(" выходной день :)");
-    }
-    else if (day_number < 1 || day_number > 7)
-    {
-        Console.WriteLine();
-    }
-    else
-    {
-        Console.WriteLine(" будний день :(");
-    }
-    return result;
-}
-
-int day = digit_day_number(day_number);
-int weekend = day_off_of_the_week(day_number);
+day_off_of_the_week(day_number);
